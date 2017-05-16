@@ -1,0 +1,7 @@
+<GridLayout rows="*, auto, *" columns="*, auto, *">
+	<StackLayout row="1" col="1">
+		<Label text="{{ 'X: ' + x }}" [class.valid]='isValidTilt(x)' [class.invalid]='!isValidTilt(x)'></Label>
+		<Label text="{{ 'Y: ' + y }}" [class.valid]='isValidTilt(y)' [class.invalid]='!isValidTilt(y)'></Label>
+		<Label text="{{ 'Z: ' + z }}" [class.valid]='isValidOrientation()' [class.invalid]='!isValidOrientation()'></Label>
+	</StackLayout>
+</GridLayout>

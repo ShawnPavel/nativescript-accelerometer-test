@@ -1,0 +1,15 @@
+<GridLayout class="root" [class.invalid]='!isValidOrientation()'>
+	<GridLayout rows="*, auto, *" columns="*, auto, *">
+		<GridLayout colSpan="3" class="bg-overlay"></GridLayout>
+		<GridLayout row="1" class="bg-overlay"></GridLayout>
+		<GridLayout row="1" col="2" class="bg-overlay"></GridLayout>
+		<GridLayout row="2" colSpan="3" class="bg-overlay"></GridLayout>
+
+		<Image src="res://overlay" row="1" col="1" stretch="aspectFill" class="ls-overlay"></Image>
+		<Image src="res://level" row="1" col="1" stretch="aspectFill" class="ls-overlay"></Image>
+	</GridLayout>
+
+	<AbsoluteLayout #absLayout>
+		<Image #bubble src="res://bubble" width="50" height="50" [left]="dotLeft" [top]="dotTop" style="opacity: .5;"></Image>
+	</AbsoluteLayout>
+</GridLayout>

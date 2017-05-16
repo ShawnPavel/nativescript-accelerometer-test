@@ -1,0 +1,17 @@
+.ls-overlay {
+	width: 95%;
+}
+
+.bg-overlay {
+	background-color: black;
+	opacity: 0.75;
+}
+
+.root {
+	border-width: 5;
+	border-color: green;
+}
+
+.invalid {
+	border-color: red;
+}
