@@ -1,1 +1,2 @@
-accel_test
+# Nativescript Angular test application for nativescript-accelerometer
+The objective of this application is to test the nativescript-accelerometer plugin in a Nativescript Angular application while updating the UI based on the data from the plugin.
