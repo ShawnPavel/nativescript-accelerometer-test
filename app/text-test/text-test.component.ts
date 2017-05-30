@@ -41,7 +41,7 @@ export class TextTestComponent implements OnInit, OnDestroy {
 					me.z = this.round(data.z, 4);
 				}
 			});
-		})
+		}, { sensorDelay: 'ui' });
 	}
 
 	private round(value, precision) {

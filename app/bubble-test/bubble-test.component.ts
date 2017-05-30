@@ -47,7 +47,7 @@ export class BubbleTestComponent implements OnInit, OnDestroy {
 					me.updateCircle();
 				}
 			});
-		})
+		}, { sensorDelay: 'ui' });
 	}
 
 	private dotLeft = 0;
