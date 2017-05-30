@@ -4,12 +4,12 @@ import { AbsoluteLayout } from 'ui/layouts/absolute-layout'
 import * as accelerometer from 'nativescript-accelerometer';
 
 @Component({
-	selector: "ns-bubble-test",
+	selector: "ns-bubble-test-vertical",
 	moduleId: module.id,
-	styleUrls: ['./bubble-test.component.css'],
-	templateUrl: "./bubble-test.component.html",
+	styleUrls: ['./bubble-test-vertical.component.css'],
+	templateUrl: "./bubble-test-vertical.component.html",
 })
-export class BubbleTestComponent implements OnInit, OnDestroy {
+export class BubbleTestVerticalComponent implements OnInit, OnDestroy {
 	@ViewChild('absLayout') public absLayout: ElementRef
 	@ViewChild('bubble') public bubbleImage: ElementRef
 
@@ -71,11 +71,19 @@ export class BubbleTestComponent implements OnInit, OnDestroy {
 		return Math.round(value * multiplier) / multiplier;
 	}
 
-	private isValidTilt(val): boolean {
+	private isValidXTilt(val): boolean {
 		return Math.abs(val) <= .05;
 	}
 
+	private isValidYTilt(val): boolean {
+		return Math.abs(val) >= .99;
+	}
+
+	private isValidZ(val): boolean {
+	return Math.abs(this.z) <= .05;
+	}
+
 	private isValidOrientation(): boolean {
-		return this.isValidTilt(this.x) && this.isValidTilt(this.y) && +this.z <= -.5;
+	return this.isValidXTilt(this.x) && this.isValidYTilt(this.y) && this.isValidZ(this.z);
 	}
 }

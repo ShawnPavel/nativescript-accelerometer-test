@@ -1,4 +1,4 @@
-<GridLayout class="root" [class.invalid]='!isValidOrientation()' style="background-color:lightgreen;">
+<GridLayout class="root" [class.invalid]='!isValidOrientation()'>
 	<GridLayout rows="*, auto, *" columns="*, auto, *">
 		<GridLayout colSpan="3" class="bg-overlay"></GridLayout>
 		<GridLayout row="1" class="bg-overlay"></GridLayout>
@@ -7,11 +7,11 @@
 
 		<Image src="res://overlay" row="1" col="1" stretch="aspectFill" class="ls-overlay"></Image>
 	</GridLayout>
-	<GridLayout rows="*, 200, *" columns="*, 200, *">
-		<Image src="res://box_level" row="1" col="1" stretch="aspectFill" class="ls-overlay"></Image>
+	<GridLayout rows="auto, *" columns="*, auto, *">
+		<Image src="res://level_top" row="0" col="1" stretch="aspectFill" class="ls-overlay ls-level-vertical"></Image>
 	</GridLayout>
 
 	<AbsoluteLayout #absLayout>
-		<Image #bubble src="res://pizza_bubble" width="50" height="50" [left]="dotLeft" [top]="dotTop" [class.transparent]='!isValidOrientation()'></Image>
+		<Image #bubble src="res://bubble" width="50" height="50" [left]="dotLeft" [top]="dotTop" style="opacity: .5;"></Image>
 	</AbsoluteLayout>
 </GridLayout>

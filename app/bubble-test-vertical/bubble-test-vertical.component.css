@@ -2,10 +2,6 @@
 	width: 95%;
 }
 
-.transparent {
-	opacity: 0.5;
-}
-
 .bg-overlay {
 	background-color: black;
 	opacity: 0.75;

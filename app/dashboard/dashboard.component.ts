@@ -14,22 +14,14 @@ export class DashboardComponent {
 	}
 
 	private goToBubble(): void {
-		this.routerExtensions.navigate(['/bubble-test'],
-			{
-				transition: {
-					name: 'flip'
-				},
-				clearHistory: false
-			});
+		this.routerExtensions.navigate(['/bubble-test']);
+	}	
+
+	private goToVerticalBubble(): void {
+		this.routerExtensions.navigate(['/bubble-test-vertical']);
 	}	
 
 	private goToText(): void {
-		this.routerExtensions.navigate(['/text-test'],
-			{
-				transition: {
-					name: 'flip'
-				},
-				clearHistory: false
-			});
+		this.routerExtensions.navigate(['/text-test']);
 	}	
 }

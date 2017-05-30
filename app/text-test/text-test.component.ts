@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit} from "@angular/core";
+import { Component, OnDestroy, OnInit, NgZone } from "@angular/core";
 
 import * as accelerometer from 'nativescript-accelerometer';
 
@@ -13,7 +13,9 @@ export class TextTestComponent implements OnInit, OnDestroy {
 	private y: number = 0;
 	private z: number = 0;
 
-	constructor() {
+	constructor(
+		private zone: NgZone
+	) {
 	}
 
 	ngOnInit(): void {
@@ -25,17 +27,20 @@ export class TextTestComponent implements OnInit, OnDestroy {
 	}
 
 	private accelerate(): void {
+		let me = this;
 		accelerometer.startAccelerometerUpdates((data) => {
-			let deltaX = Math.abs(this.x - data.x);
-			let deltaY = Math.abs(this.y - data.y);
-			let deltaZ = Math.abs(this.z - data.z);
+			me.zone.run(() => {
+				let deltaX = Math.abs(me.x - data.x);
+				let deltaY = Math.abs(me.y - data.y);
+				let deltaZ = Math.abs(me.z - data.z);
 
-			if (Math.max(deltaX, deltaY, deltaZ) >= .05) {
-					console.log("x: " + data.x + "y: " + data.y + "z: " + data.z);
-					this.x = this.round(data.x, 4);
-					this.y = this.round(data.y, 4);
-					this.z = this.round(data.z, 4);
-			}
+				if (Math.max(deltaX, deltaY, deltaZ) >= .05) {
+					// console.log("x: " + data.x + "y: " + data.y + "z: " + data.z);
+					me.x = this.round(data.x, 4);
+					me.y = this.round(data.y, 4);
+					me.z = this.round(data.z, 4);
+				}
+			});
 		})
 	}
 

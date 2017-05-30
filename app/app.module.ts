@@ -4,6 +4,7 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
 import { BubbleTestComponent } from './bubble-test/bubble-test.component';
+import { BubbleTestVerticalComponent } from './bubble-test-vertical/bubble-test-vertical.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TextTestComponent } from './text-test/text-test.component';
 
@@ -18,6 +19,7 @@ import { TextTestComponent } from './text-test/text-test.component';
     declarations: [
         AppComponent,
         BubbleTestComponent,
+        BubbleTestVerticalComponent,
         DashboardComponent,
         TextTestComponent
     ],
